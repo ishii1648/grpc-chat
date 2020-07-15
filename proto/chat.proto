@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package chat;
+
+service Chat {
+  rpc SendAndRecieveMsg (stream SendRequest) returns (stream SendResult) {}
+}
+
+message SendRequest {
+  string from = 1;
+  string message = 2;
+}
+
+message SendResult {
+  string from = 1;
+  string message = 2;
+}
